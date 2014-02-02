@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block metaproperties %}
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content="Contact us | dirPlace" />
+	<meta property="og:description" content="Questions abour dirPlace - Contact us. We will reply shortly by e-mail."/>
+	<meta property="og:url" content="http://dirplace.com/"/>
+	<meta property="og:image" content="http://dirplace.com/images/logo-mobile.gif"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:site_name" content="dirPlace"/>
+{% endblock metaproperties %}
+
+{% block seoSnippet %}
+    <title>Contact us | dirPlace</title>
+    <meta name="description" content="Questions abour dirPlace - Contact us. We will reply shortly by e-mail.">
+    <meta name="robots" content="noindex, follow">
+{% endblock seoSnippet %}
+
+{% block maincontent %}
+<br clear="all"/>
+<h1>Contact Us</h1>
+<br clear="all"/>
+<div align="center">
+    <h2>Thanks for your message. We're on it and will be in touch shortly.</h1>
+    <br clear="all"/>
+    <h3><a href="{% url "home" %}">Back to homepage</a></h2>
+</div>
+{% endblock maincontent %}

@@ -1,0 +1,51 @@
+{% extends 'userena/base_userena.html' %}
+{% load i18n %}
+{% load url from future %}
+
+{% block metaproperties %}
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content="My profile | dirPlace" />
+	<meta property="og:description" content="My profile"/>
+	<meta property="og:url" content="http://dirplace.com/"/>
+	<meta property="og:image" content="http://dirplace.com/images/logo-mobile.gif"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:site_name" content="dirPlace"/>
+{% endblock metaproperties %}
+
+{% block seoSnippet %}
+    <title>My profile | dirPlace</title>
+    <meta name="description" content="My profile | dirPlace">
+    <meta name="robots" content="noindex, follow">
+{% endblock seoSnippet %}
+
+{% block maincontent %}
+    <div id="profileNavigation">
+        {% comment %}Dirty hack. Will use django-guardian in the future.{% endcomment %}
+        {% if user.username == profile.user.username %}
+            <ul id="box-nav">
+                <a href="{% url 'userena_profile_detail' user.username %}">{% trans "View profile" %}</a>&nbsp;|&nbsp;
+                <a href="{% url 'userena_profile_edit' user.username %}">{% trans "Edit details" %}</a>&nbsp;|&nbsp;
+                <a href="{% url 'userena_password_change' user.username %}">{% trans "Change password" %}</a>&nbsp;|&nbsp;
+                <a href="{% url 'userena_email_change' user.username %}">{% trans "Change email" %}</a>
+            </ul>
+        {% endif %}
+    </div>
+    <br clear="all"/>
+    <h1>Edit Profile -
+        {% if profile.user.get_full_name %}
+            Profile for {{ profile.user.get_full_name }}
+        {% else %}
+            Profile for {{ profile.user.email }}
+        {% endif %}
+    </h1>
+    <div id="editProfileForm">
+        <form action="" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <fieldset>
+                {{ form.as_p }}
+            </fieldset>
+            <br clear="all"/>
+            <input type="submit" value="{% trans "Save changes" %}" />
+        </form>
+    </div>
+{% endblock %}

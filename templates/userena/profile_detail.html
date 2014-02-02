@@ -1,0 +1,110 @@
+{% extends 'userena/base_userena.html' %}
+{% load i18n %}
+{% load url from future %}
+{% load translateChoiceFields %}
+{% load qr_tags %}
+
+{% block metaproperties %}
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content="My profile | dirPlace" />
+	<meta property="og:description" content="My profile"/>
+	<meta property="og:url" content="http://dirplace.com/"/>
+	<meta property="og:image" content="http://dirplace.com/images/logo-mobile.gif"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:site_name" content="dirPlace"/>
+{% endblock metaproperties %}
+
+{% block seoSnippet %}
+    <title>My profile | dirPlace</title>
+    <meta name="description" content="My profile | dirPlace">
+    <meta name="robots" content="noindex, follow">
+{% endblock seoSnippet %}
+
+{% block maincontent %}
+    <div class="white-box">
+        {% if user.username == profile.user.username %}
+            <div id="profileNavigation">
+                <ul id="box-nav">
+                    <a href="{% url 'userena_profile_detail' user.username %}">{% trans "View profile" %}</a>&nbsp;|&nbsp;
+                    <a href="{% url 'userena_profile_edit' user.username %}">{% trans "Edit details" %}</a>&nbsp;|&nbsp;
+                    <a href="{% url 'userena_password_change' user.username %}">{% trans "Change password" %}</a>&nbsp;|&nbsp;
+                    <a href="{% url 'userena_email_change' user.username %}">{% trans "Change email" %}</a>
+                </ul>
+            </div>
+            <br clear="all"/>
+        {% endif %}
+        {% if profile.user.get_full_name %}
+            <h1>Profile for {{ profile.user.get_full_name }}</h1>
+        {% else %}
+            <h1>Profile for {{ profile.user.email }}</h1>
+        {% endif %}
+        <div id="details">
+            <div class="profileDetails">
+                <br clear="all"/>
+                <b class="brownText">&nbsp;&nbsp;&nbsp;* Details</b>
+                <br clear="all"/>
+                {% block profile_details %}
+                    <div style="float:left">
+                        {% qr_from_text profile.user.username 's' %}
+                    </div>
+                    {% if profile.get_mugshot_url %}
+                        <div style="float:left;">
+                            <br clear="all"/>
+                            <img class="mugshot" src="{{ profile.get_mugshot_url }}" alt="{% trans "Your mugshot" %}" />
+                            <br clear="all"/>
+                        </div>
+                    {% endif %}
+                    <br clear="all"/>
+                    {% block profile_definition_list %}
+                        <div style="margin-left:9px;">
+                            <li><b>ID</b>: <span class="redText">{{ profile.user.username }}</span>
+                            <br/>
+                            {% if profile.user.get_full_name %}
+                                <li><b>{% trans "Name" %}</b>: {{ profile.user.get_full_name }}
+                                <br/>
+                            {% endif %}
+                            {% if profile.birth_date %}
+                                <li><b>Birthdate</b>: {{ profile.birth_date|date }}
+                                <br/>
+                            {% endif %}
+                            {% if profile.genre %}
+                                <li><b>Gender</b>: {{ profile.genre|selected_genre }}
+                                <br/>
+                            {% endif %}
+                            {% if profile.occupation %}
+                                <li><b>Occupation</b>: {{ profile.occupation }}
+                                <br/>
+                            {% endif %}
+                            {% if profile.marital_status %}
+                                <li><b>Marital status</b>: {{ profile.marital_status|selected_marital_status }}
+                                <br/>
+                            {% endif %}
+                        </div>
+                    {% endblock %}
+                {% endblock %}
+                <br clear="all"/>
+                &nbsp;&nbsp;&nbsp;<a href="{% url 'userena_profile_edit' user.username %}">Edit details</a>
+                <br clear="all"/><br/>
+            </div>
+            {% if user.username == profile.user.username %}
+                    <span class="redText">
+                        {% if not profile.user.get_full_name %}
+                            <br clear="all"/>
+                            This account has been <strong>activated</strong>.
+                            <br clear="all"/><br/>
+                            Please complete your profile. As minimum, you need to enter at least your full name to
+                            be able to get promotions or register businesses.
+                            <br/><br/>
+                        {% endif %}
+                        <br/>
+                        We encourage you to keep your profile up to date.
+                        {% if not profile.user.get_full_name %}
+                        Click here to <a href="{% url 'userena_profile_edit' user.username %}">edit details</a>
+                        {% endif %}
+                    </span>
+                <br clear="all"/>
+            {% endif %}
+        </div>
+    </div>
+    <br clear="all"/>
+{% endblock %}

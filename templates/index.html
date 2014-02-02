@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head profile="http://gmpg.org/xfn/11">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>dirPlace | The social directory of discounts, coupons and offers</title>
+	<meta name="description" content="DirPlace is a social directory with local offers and discounts from places in your city. Look for offers and discounts locally from your mobile device or your computer.">
+	<link rel="shortcut icon" type="image/x-icon" href="http://dirplace.com/favicon.ico">
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content="dirPlace | The social directory of discounts, coupons and offers" />
+	<meta property="og:description" content="DirPlace is a social directory with local offers and discounts from places in your city. Look for offers and discounts locally from your mobile device or your computer."/>
+	<meta property="og:url" content="http://dirplace.com/"/>
+	<meta property="og:image" content="http://dirplace.com/images/logo-mobile.gif"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:site_name" content="dirPlace"/>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}reset.css" />
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}style.css" />
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}media-queries.css" />
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif:700,400,400italic,700italic' rel='stylesheet' type='text/css'>
+    <!--[if IE]>
+	   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <SCRIPT>
+        $(document).ready(function() {
+            $('#query').focus();
+        });
+    </SCRIPT>
+</head>
+<body id="home" onLoad="">
+	<div id="wrapper">
+		<header>
+			<nav>
+				<a href="{% url "home" %}accounts/signup/" class="claim">Create your account</a>
+				<a href="#" class="create">Register your business</a>
+				<a href="#" class="login">Login</a>
+                <div class="geo">
+                    <div class="detectedCity">
+                        <span>&nbsp;*&nbsp;Now in Bogot&aacute;, Colombia&nbsp;*&nbsp;</span>
+                    </div>
+                    <div class="changeCity">
+                        <a href="#">Change city</a></span>
+                    </div>
+                </div>
+				<div class="clearfix"></div>
+			</nav>
+            <div align="center" class="logoContainer">
+			     <h1><img src="{{ MEDIA_URL }}logo.jpg" width="540" height="170" border="0" alt="dirPlace"></h1>
+			     <h2>The social directory of discounts, coupons and offers</h2>
+            </div>
+		</header>
+		<section id="main-content">
+			<div id="featured" align="center">
+                <form action="{% url "home" %}search-results/" method="POST">
+                    <div class="searchBox">
+                        <div class="searchInput">
+                            <div class="searchHint">Search by keywordss, e.g. chinese food, women's shoes, spas</div>
+                            <input name="query" id="query">
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="searchIn">
+                        <div class="searchReach">
+                            <select name="reach" class="reach">
+                                <option>--- Everywhere ---</option>
+                                <option selected>in Bogot&aacute;</option>
+                                <option>in Cundinamarca</option>
+                                <option>in Colombia</option>
+                            </select>
+                            <input type="submit" value="Search" class="searchb">
+                            <br clear="all"/>
+                        </div>
+                        <br clear="all"/>
+                    </div>
+                    {% csrf_token %}
+                </form>
+                <div class="clearfix"></div>
+			</div>
+			<hr/>
+			<div id="latest">
+                Search by category:
+                <br/><br/>
+                {% for category in mainCategories %}
+                    <div class="category">
+                        <a href="{% url "home" %}categories/{{ category.slug }}/">{{ category.name }}</a>
+                    </div>
+                {% endfor %}
+                <br clear="all"/>
+			</div>
+			<div class="clearfix"></div>
+			<hr/>
+			<div id="about">
+                <div align="center"><h2>How <span class="dirPlaceNamed">dirPlace</span> works:</h2></div>
+                <br clear="all"/>
+                <div class="howWorksSection">
+                    <img src="{{ MEDIA_URL }}people-icon.png" width="54" height="54" border="0" align="left" class="simpleMargin">
+                    <span class="title">For you:</span>
+                    <br/><br/>
+                    - Search for discounts, coupons and offers, by keyword or category.
+                    <br/><br/>
+                    - You will get a list of current promotions within your specified reach. Even you can use GPS-enabled devices to see a list of places close to you.
+                    <br/><br/>
+                    - If you have a <span class="dirPlaceNamed">dirPlace</span> account and becomes a <i>fan</i> of the place offering the promotion, you can get the benefit.
+                    <br/><br/>
+                    <span class="dirPlaceNamed">It's free!</span> - <a href="">Create your account now</a>
+                </div>
+                <div class="howWorksSection">
+                    <img src="{{ MEDIA_URL }}shop-icon.png" width="54" height="54" border="0" align="left" hspace="9" class="simpleMargin">
+                    <span class="title">For your business:</span>
+                    <br/><br/>
+                    - Register your business.
+                    <br/><br/>
+                    - Create a promotion for <span class="dirPlaceNamed">dirPlace</span> users: A discount, a coupon or an offer.
+                    <br/><br/>
+                    - That's all. Since the promotions only apply for your <i>fans</i>, you'll be ready to build an online community of loyal customers.
+                    We will drive traffic to your business' profile for free. You'll be able to invite your current customers too.
+                    <br/><br/>
+                    <span class="dirPlaceNamed">It's free!</span> - <a href="">Register your business now</a>
+                </div>
+			</div>
+		</section>
+        <br clear="all"/><br/>
+		<hr/>
+		<footer>
+			<nav>
+                <a href="{% url "home" %}about-us/">About us</a>
+                <a href="{% url "home" %}faqs/">FAQs</a>
+                <a href="{% url "home" %}contact-us/">Contact us</a>
+                <a href="{% url "home" %}terms-and-conditions/">Terms and Conditions</a>
+                <a href="{% url "home" %}privacy-policy/">Privacy Policy</a>
+                <a href="{% url "home" %}get-add-for-android/">Get app for Android</a>
+                <a href="http://www.twitter.com/dirPlace" target="_blank"><img src="{{ MEDIA_URL }}twitter-icon.png" align="left" width="27" height="27" border="0" class="simpleMarginTW">Follow us on Twitter</a>
+				<div class="clearfix"></div>
+			</nav>
+            <br clear="all"/>
+			<p><span class="dirPlaceNamed">dirPlace</span> version 1.0 &copy; {% now "Y" %} | <a href="http://es.dirplace.com/">Espa&ntilde;ol</a></p>
+		</footer>
+	</div>
+</body>
+</html>

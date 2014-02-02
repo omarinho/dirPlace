@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block mainhead %}
+    {{ block.super }}
+    <STYLE>
+        #id_description {
+            width: 100%;
+            height:243px;
+        }
+    </STYLE>
+{% endblock mainhead %}
+
+{% block metaproperties %}
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content="Contact us | dirPlace" />
+	<meta property="og:description" content="Questions abour dirPlace - Contact us. We will reply shortly by e-mail."/>
+	<meta property="og:url" content="http://dirplace.com/"/>
+	<meta property="og:image" content="http://dirplace.com/images/logo-mobile.gif"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:site_name" content="dirPlace"/>
+{% endblock metaproperties %}
+
+{% block seoSnippet %}
+    <title>Contact us | dirPlace</title>
+    <meta name="description" content="Questions abour dirPlace - Contact us. We will reply shortly by e-mail.">
+    <meta name="robots" content="noindex, follow">
+{% endblock seoSnippet %}
+
+{% block maincontent %}
+<br clear="all"/>
+<h1>Contact Us</h1>
+<br clear="all"/>
+<h3>Questions? Need a hand? We're here to help. However, initially you can take a look at our
+<a href='{% url "home" %}faqs/'>FAQs (Frequently Asked Questions)</a>. Maybe we are answering your inquiry there. Otherwise, please complete
+the following form and we will contact you soon:</h3>
+<br clear="all"/>
+<div class="contactForm">
+    {% if form.errors %}
+        <span class="redText">Please, correct the error{{ form.errors|pluralize }} described below:</span>
+        <br clear="all"/><br/>
+    {% endif %}
+    <div>
+        <form action="" method="post">
+            <div class='simplePadding {% if form.name.errors %}errors{% endif %}'>
+                {{ form.name.errors }}
+                <div>
+                    <b>Your name: </b>
+                </div>
+                <div>
+                    {{ form.name }}
+                </div>
+            </div>
+            <div class='simplePadding {% if form.email.errors %}errors{% endif %}'>
+                {{ form.email.errors }}
+                <div>
+                    <b>Your e-mail: </b>
+                </div>
+                <div>
+                    {{ form.email }}
+                </div>
+            </div>
+            <div class='simplePadding {% if form.description.errors %}errors{% endif %}'>
+                {{ form.description.errors }}
+                <div>
+                    <b>Tell us about it: </b>
+                </div>
+                <div>
+                    {{ form.description }}
+                </div>
+            </div>
+            <div class='simplePadding {% if form.description.errors %}errors{% endif %}'>
+                {{ form.captcha.errors }}
+                <div>
+                    <b>You are a human being, right? If so, please write the letters or numbers you see in the image before clicking on submit button: </b>
+                </div>
+                <div>
+                    {{ form.captcha }}
+                </div>
+            </div>
+            <div class='simplePadding'>
+                <input type="submit" value="Submit">
+            </div>
+            {% csrf_token %}
+        </form>
+    </div>
+</div>
+{% endblock maincontent %}

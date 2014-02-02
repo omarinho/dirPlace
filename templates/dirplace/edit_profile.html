@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block mainhead %}
+    {{ block.super }}
+{% endblock mainhead %}
+
+{% block metaproperties %}
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content="Edit your profile | dirPlace" />
+	<meta property="og:description" content="Edit your profile on dirPlace"/>
+	<meta property="og:url" content="http://dirplace.com/"/>
+	<meta property="og:image" content="http://dirplace.com/images/logo-mobile.gif"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:site_name" content="dirPlace"/>
+{% endblock metaproperties %}
+
+{% block seoSnippet %}
+    <title>Edit your profile | dirPlace</title>
+    <meta name="description" content="Edit your profile on dirPlace">
+    <meta name="robots" content="noindex, follow">
+{% endblock seoSnippet %}
+
+{% block maincontent %}
+<br clear="all"/>
+<div id="profileNavigation">
+    <ul id="box-nav">
+        <a href="{% url "home" %}accounts/{{ username }}/">View profile</a>&nbsp;|&nbsp;
+        <a href="{% url "home" %}accounts/{{ username }}/edit/">Edit details</a>&nbsp;|&nbsp;
+        <a href="{% url "home" %}accounts/{{ username }}/password/">Change password</a>&nbsp;|&nbsp;
+        <a href="{% url "home" %}accounts/{{ username }}/email/">Change email</a>
+    </ul>
+</div>
+<br clear="all"/>
+<h1>Edit your profile ({{ theUser.email }})</h1>
+<br clear="all"/>
+<h3>We encourage you to keep your profile up to date.</h3>
+<br clear="all"/>
+<div class="editProfileForm">
+    {% if form.errors %}
+        <span class="redText">Please, correct the error{{ form.errors|pluralize }} described below:</span>
+        <br clear="all"/><br/>
+    {% endif %}
+    {% if successMessage %}
+        <span class="greenText">Profile updated successfully - <a href="{% url "home" %}accounts/{{ username }}">View my new profile</a></span>
+        <br clear="all"/><br/>
+    {% endif %}
+    <div>
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class='simplePadding {% if form.name.errors %}errors{% endif %}'>
+                {{ form.first_name.errors }}
+                <div>
+                    First name:
+                </div>
+                <div>
+                    {{ form.first_name }}
+                </div>
+            </div>
+            <div class='simplePadding {% if form.name.errors %}errors{% endif %}'>
+                {{ form.last_name.errors }}
+                <div>
+                    Last name:
+                </div>
+                <div>
+                    {{ form.last_name }}
+                </div>
+            </div>
+            <div class='simplePadding {% if form.name.errors %}errors{% endif %}'>
+                {{ form.mugshot.errors }}
+                <div>
+                    Your picture:
+                </div>
+                <div>
+                    <span style="font-size:11px;">
+                        {{ form.mugshot }}
+                    </span>
+                </div>
+            </div>
+            <div class='simplePadding {% if form.name.errors %}errors{% endif %}'>
+                {{ form.birth_date.errors }}
+                <div>
+                    Birthdate:
+                </div>
+                <div>
+                    {{ form.birth_date }}
+                </div>
+            </div>
+            <div class='simplePadding {% if form.name.errors %}errors{% endif %}'>
+                {{ form.genre.errors }}
+                <div>
+                    Gender:
+                </div>
+                <div>
+                    {{ form.genre }}
+                </div>
+            </div>
+            <div class='simplePadding {% if form.name.errors %}errors{% endif %}'>
+                {{ form.occupation.errors }}
+                <div>
+                    Occupation:
+                </div>
+                <div>
+                    {{ form.occupation }}
+                </div>
+            </div>
+            <div class='simplePadding {% if form.name.errors %}errors{% endif %}'>
+                {{ form.marital_status.errors }}
+                <div>
+                    Marital status:
+                </div>
+                <div>
+                    {{ form.marital_status }}
+                </div>
+            </div>
+            <div class='simplePadding'>
+                {{ form.privacy }}
+                <input type="submit" value="Submit">
+            </div>
+            {% csrf_token %}
+        </form>
+    </div>
+</div>
+{% endblock maincontent %}

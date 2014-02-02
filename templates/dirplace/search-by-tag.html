@@ -1,0 +1,233 @@
+{% extends "base.html" %}
+
+{% block mainhead %}
+    {{ block.super }}
+    <script type="text/javascript" charset="utf-8" src="{{ STATIC_URL }}jquery.raty.js"></script>
+    <SCRIPT>
+        $(document).ready(function() {
+            $('#score-1').raty({
+                readOnly : true,
+                score: function() {
+                    return $(this).attr('data-rating');
+                }
+            });
+            $('#score-2').raty({
+                readOnly : true,
+                score: function() {
+                    return $(this).attr('data-rating');
+                }
+            });
+            $('#score-3').raty({
+                readOnly : true,
+                score: function() {
+                    return $(this).attr('data-rating');
+                }
+            });
+            $('#score-4').raty({
+                readOnly : true,
+                score: function() {
+                    return $(this).attr('data-rating');
+                }
+            });
+            $('#score-5').raty({
+                readOnly : true,
+                score: function() {
+                    return $(this).attr('data-rating');
+                }
+            });
+            $('#score-6').raty({
+                readOnly : true,
+                score: function() {
+                    return $(this).attr('data-rating');
+                }
+            });
+            $('#score-7').raty({
+                readOnly : true,
+                score: function() {
+                    return $(this).attr('data-rating');
+                }
+            });
+            $('#score-8').raty({
+                readOnly : true,
+                score: function() {
+                    return $(this).attr('data-rating');
+                }
+            });
+            $('#score-9').raty({
+                readOnly : true,
+                score: function() {
+                    return $(this).attr('data-rating');
+                }
+            });
+        });
+    </SCRIPT>
+{% endblock mainhead %}
+
+{% block metaproperties %}
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content="Search discounts, coupons and offers by category | dirPlace" />
+	<meta property="og:description" content="By browsing categories, subcategories and tags you will get a list of current promotions within your specified reach."/>
+	<meta property="og:url" content="http://dirplace.com/"/>
+	<meta property="og:image" content="http://dirplace.com/images/logo-mobile.gif"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:site_name" content="dirPlace"/>
+{% endblock metaproperties %}
+
+{% block seoSnippet %}
+    <title>Search discounts, coupons and offers by tag | dirPlace</title>
+    <meta name="description" content="By browsing categories, subcategories and tags you will get a list of current promotions within your specified reach.">
+    <meta name="robots" content="noindex, follow">
+{% endblock seoSnippet %}
+
+{% block maincontent %}
+    <div id="featured">
+        <h1>Category: <a href="{% url "home" %}categories/{{ theCategory.slug }}/">{{ theCategory.name }}</a>&nbsp;&gt;&gt;&gt;&nbsp;<a href="{% url "home" %}categories/{{ theCategory.slug }}/{{ theSubCategory.slug }}/">{{ theSubCategory.name }}</a>&nbsp;&gt;&gt;&gt;&nbsp;<span class="categoryName">{{ theTag.name }}</span></h1>
+        <form method="POST">
+            <div class="searchIn">
+                <div class="searchReach">
+                    <select name="reach" class="reach">
+                        <option>--- Everywhere ---</option>
+                        <option selected>in Bogot&aacute;</option>
+                        <option>in Cundinamarca</option>
+                        <option>in Colombia</option>
+                    </select>
+                </div>
+            </div>
+            {% csrf_token %}
+        </form>
+        <br clear="all"/><br/>
+        <div class="clearfix"></div>
+        27 places with promotions were found
+        &nbsp;-&nbsp;
+        Sorted by
+        <select>
+            <option disabled>distance to you</option>
+            <option selected>rating</option>
+            <option>alphabetically</option>
+        </select>
+    </div>
+    <br clear="all"/>
+    <div class="results">
+        <div class="banner-spot">
+            <img src="{{ MEDIA_URL}}banner-sample-3.jpg" width="728" height="90" border="1" class="bannerBorder">
+        </div>
+        <div class="spot">
+            <div class="floatLeft"><a href="{% url "home" %}places/omaha-cafe/">Omaha Cafe</a>&nbsp;-&nbsp;<b>Discount:</b> <strong class="mainOffer">20% in all combos</strong>&nbsp;&nbsp;&nbsp;</div>
+            <div class="floatLeft"><div id="score-1" data-rating="5"></div></div>
+            <div class="clearfix"></div>
+            <div class="content">
+                <div class="moreOffers">
+                    <b>Coupon</b>: <strong>$ 20 for buying any product</strong> |
+                    <b>Offer</b>: <strong>Buy a sandwich and get the second for free</strong>
+                </div>
+                <div class="description">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                    scrambled it to make a type specimen bo.
+                </span>
+            </div>
+        </div>
+        <div class="spot">
+            <div class="floatLeft"><a href="{% url "home" %}places/omaha-cafe/">Omaha Cafe</a>&nbsp;-&nbsp;<b>Discount:</b> <strong class="mainOffer">20% in all combos</strong>&nbsp;&nbsp;&nbsp;</div>
+            <div class="floatLeft"><div id="score-2" data-rating="5"></div></div>
+            <div class="clearfix"></div>
+            <div class="content">
+                <div class="description">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                    scrambled it to make a type specimen bo.
+                </span>
+            </div>
+        </div>
+        <div class="spot">
+            <div class="floatLeft"><a href="{% url "home" %}places/omaha-cafe/">Omaha Cafe</a>&nbsp;-&nbsp;<b>Discount:</b> <strong class="mainOffer">20% in all combos</strong>&nbsp;&nbsp;&nbsp;</div>
+            <div class="floatLeft"><div id="score-3" data-rating="5"></div></div>
+            <div class="clearfix"></div>
+            <div class="content">
+                <div class="description">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                    scrambled it to make a type specimen bo.
+                </span>
+            </div>
+        </div>
+        <div class="banner-spot">
+            <img src="{{ MEDIA_URL}}banner-sample.jpg" width="728" height="90" border="0" align="middle" class="bannerBorder">
+        </div>
+        <div class="spot">
+            <div class="floatLeft"><a href="{% url "home" %}places/omaha-cafe/">Omaha Cafe</a>&nbsp;-&nbsp;<b>Discount:</b> <strong class="mainOffer">20% in all combos</strong>&nbsp;&nbsp;&nbsp;</div>
+            <div class="floatLeft"><div id="score-4" data-rating="5"></div></div>
+            <div class="clearfix"></div>
+            <div class="content">
+                <div class="description">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                    scrambled it to make a type specimen bo.
+                </span>
+            </div>
+        </div>
+        <div class="spot">
+            <div class="floatLeft"><a href="{% url "home" %}places/omaha-cafe/">Omaha Cafe</a>&nbsp;-&nbsp;<b>Discount:</b> <strong class="mainOffer">20% in all combos</strong>&nbsp;&nbsp;&nbsp;</div>
+            <div class="floatLeft"><div id="score-5" data-rating="5"></div></div>
+            <div class="clearfix"></div>
+            <div class="content">
+                <div class="description">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                    scrambled it to make a type specimen bo.
+                </span>
+            </div>
+        </div>
+        <div class="spot">
+            <div class="floatLeft"><a href="{% url "home" %}places/omaha-cafe/">Omaha Cafe</a>&nbsp;-&nbsp;<b>Discount:</b> <strong class="mainOffer">20% in all combos</strong>&nbsp;&nbsp;&nbsp;</div>
+            <div class="floatLeft"><div id="score-6" data-rating="5"></div></div>
+            <div class="clearfix"></div>
+            <div class="content">
+                <div class="description">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                    scrambled it to make a type specimen bo.
+                </span>
+            </div>
+        </div>
+        <div class="spot">
+            <div class="floatLeft"><a href="{% url "home" %}places/omaha-cafe/">Omaha Cafe</a>&nbsp;-&nbsp;<b>Discount:</b> <strong class="mainOffer">20% in all combos</strong>&nbsp;&nbsp;&nbsp;</div>
+            <div class="floatLeft"><div id="score-7" data-rating="5"></div></div>
+            <div class="clearfix"></div>
+            <div class="content">
+                <div class="description">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                    scrambled it to make a type specimen bo.
+                </span>
+            </div>
+        </div>
+        <div class="spot">
+            <div class="floatLeft"><a href="{% url "home" %}places/omaha-cafe/">Omaha Cafe</a>&nbsp;-&nbsp;<b>Discount:</b> <strong class="mainOffer">20% in all combos</strong>&nbsp;&nbsp;&nbsp;</div>
+            <div class="floatLeft"><div id="score-8" data-rating="5"></div></div>
+            <div class="clearfix"></div>
+            <div class="content">
+                <div class="description">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                    scrambled it to make a type specimen bo.
+                </span>
+            </div>
+        </div>
+        <div class="spot">
+            <div class="floatLeft"><a href="{% url "home" %}places/omaha-cafe/">Omaha Cafe</a>&nbsp;-&nbsp;<b>Discount:</b> <strong class="mainOffer">20% in all combos</strong>&nbsp;&nbsp;&nbsp;</div>
+            <div class="floatLeft"><div id="score-9" data-rating="5"></div></div>
+            <div class="clearfix"></div>
+            <div class="content">
+                <div class="description">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                    scrambled it to make a type specimen bo.
+                </span>
+            </div>
+        </div>
+        <div class="banner-spot">
+            <img src="{{ MEDIA_URL}}banner-sample-1.jpg" width="728" height="90" border="1" align="middle" class="bannerBorder">
+        </div>
+    </div>
+{% endblock maincontent %}

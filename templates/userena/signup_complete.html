@@ -1,0 +1,32 @@
+{% extends 'userena/base_userena.html' %}
+{% load i18n %}
+
+{% block metaproperties %}
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content="Create your account | dirPlace" />
+	<meta property="og:description" content="Become a dirPlace member"/>
+	<meta property="og:url" content="http://dirplace.com/"/>
+	<meta property="og:image" content="http://dirplace.com/images/logo-mobile.gif"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:site_name" content="dirPlace"/>
+{% endblock metaproperties %}
+
+{% block seoSnippet %}
+    <title>Create your account | dirPlace</title>
+    <meta name="description" content="Create your account | dirPlace">
+    <meta name="robots" content="noindex, follow">
+{% endblock seoSnippet %}
+
+{% block maincontent %}
+    <br clear="all"/>
+    <h1>{% trans "Thank you for signing up with us!" %}</h1>
+    {% if userena_activation_required %}
+        <br clear="all"/>
+        <p>{% blocktrans %}You have been sent a message with an activation link to the supplied e-mail. Please, check your e-mail and activate your account following instructions in the message.{% endblocktrans %}</p>
+        <br clear="all"/>
+    {% else  %}
+        <br clear="all"/>
+        <p>{% blocktrans %}You can now use the supplied credentials to signin.{% endblocktrans %}</p>
+        <br clear="all"/>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block metaproperties %}
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content="dirPlace app for Android is coming soon" />
+	<meta property="og:description" content="dirPlace was built to be used anywhere. That way, you will be able to use our platform not only through the web (with resposive web pages) but also through mobile apps."/>
+	<meta property="og:url" content="http://dirplace.com/"/>
+	<meta property="og:image" content="http://dirplace.com/images/logo-mobile.gif"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:site_name" content="dirPlace"/>
+{% endblock metaproperties %}
+
+{% block seoSnippet %}
+    <title>dirPlace app for Android is coming soon</title>
+    <meta name="description" content="dirPlace was built to be used anywhere. That way, you will be able to use our platform not only through the web (with resposive web pages) but also through mobile apps.">
+{% endblock seoSnippet %}
+
+{% block maincontent %}
+    <br clear="all">
+    <div align="center">
+        <img src="{{ MEDIA_URL }}android.gif" align="middle" width="614" height="600" border="0" alt="Android">
+    </div>
+    <br clear="all"/>
+{% endblock maincontent %}

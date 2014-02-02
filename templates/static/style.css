@@ -1,0 +1,288 @@
+body 				{
+	background: #000000; color: #FFFFFF; font-family: 'Droid Serif', serif; font-size: 16px;  line-height:150%;
+	-webkit-transition-property: font-size;
+	-moz-transition-property: font-size;
+	transition-property: font-size;
+	-webkit-transition-duration: 0.5s, 0.5s;
+	-moz-transition-duration: 0.5s, 0.5s;
+	transition-duration: 0.5s, 0.5s;
+	-webkit-transition-timing function: linear, ease-in;
+	-moz-transition-timing function: linear, ease-in;
+	transition-timing function: linear, ease-in;
+}
+::-moz-selection {
+    background-color: #91D8f7;
+    color: #fff;
+}
+::selection {
+    background-color: #91D8f7;
+    color: #fff;
+}
+a {
+    outline: 0;
+    color: #ADD8E6;
+    text-decoration: underline;
+}
+a:hover {
+    text-decoration: underline;
+}
+p a:hover {
+    color: #ADD8E6;
+}
+a:active {
+    outline: none;
+    position: relative;
+    top: 2px;
+}
+.clearfix {
+    clear: both;
+}
+h1 {
+    font-family: 'Helvetica';
+    font-size: 27px;
+    padding: 0px;
+	-webkit-transition-property: font-size;
+	-moz-transition-property: font-size;
+	transition-property: font-size;
+	-webkit-transition-duration: 0.5s, 0.5s;
+	-moz-transition-duration: 0.5s, 0.5s;
+	transition-duration: 0.5s, 0.5s;
+	-webkit-transition-timing function: linear, ease-in;
+	-moz-transition-timing function: linear, ease-in;
+	transition-timing function: linear, ease-in;
+}
+h1 a:hover {
+    text-decoration: none;
+    color: #27B3CF;
+}
+h2 	{
+    font-family: 'Helvetica';
+    font-size: 18px;
+    padding: 0px;
+    -webkit-transition-property: font-size;
+    -moz-transition-property: font-size;
+    transition-property: font-size;
+    -webkit-transition-duration: 0.5s, 0.5s;
+    -moz-transition-duration: 0.5s, 0.5s;
+    transition-duration: 0.5s, 0.5s;
+    -webkit-transition-timing function: linear, ease-in;
+    -moz-transition-timing function: linear, ease-in;
+    transition-timing function: linear, ease-in;
+}
+h3 	{
+    font-family: 'Droid Serif', serif;
+    font-size: 15px;
+}
+h4 	{
+    font-family: 'Droid Serif', serif;
+    padding: 3px;
+    margin: 5px 0 0 0;
+}
+h4 a {
+    text-decoration: underline;
+}
+p {
+    padding: 0 5px 0 5px;
+}
+ul 	{
+    list-style: none;
+}
+ul li {
+    margin: 0 5px;
+}
+pre	{
+    overflow: scroll;
+    font-size: 10px;
+}
+
+#wrapper {
+    margin: 10px auto;
+    max-width: 980px;
+    width: 90%;
+    background: #000000;
+    padding: 10px 0;
+}
+
+header {
+    padding: 3px;
+}
+header .logoContainer {
+    width:100%;
+}
+
+nav {
+    background: #222;
+    padding: 0;
+    margin: 0px 0px;
+}
+nav a {
+    color: #ADD8E6;
+    display: block;
+    float: left;
+    padding: 10px;
+}
+nav a:visited {
+    text-decoration:underline;
+}
+nav a:hover	{
+    text-decoration: underline;
+}
+nav a:active {
+    position: relative;
+    top: 0;
+    text-decoration:underline;
+}
+nav .claim  {
+    background-color:#660000;
+    color:#FFFFFF;
+    text-decoration:underline;
+    min-width:189px;
+    text-align:center;
+}
+nav .create  {
+    background-color:orange;
+    text-decoration:underline;
+    color:#000000;
+    min-width:189px;
+    text-align:center;
+}
+nav .login {
+    background-color:#FFCC00;
+    text-decoration:underline;
+    color:#000000;
+    min-width:189px;
+    text-align:center;
+}
+nav .geo {
+    font-size:12px;
+    float:left;
+    color:#FFFFFF;
+}
+nav .detectedCity  {
+    float:left;
+    padding:9px;
+}
+nav .changeCity  {
+    float:left;
+    padding:9px;
+}
+nav .changeCity a {
+    color: #ADD8E6;
+    float: left;
+    padding: 0px;
+    text-decoration:underline;
+}
+nav .changeCity a:hover  {
+    color: #ADD8E6;
+    float: left;
+    padding: 0px;
+    text-decoration:underline;
+    background: none;
+}
+
+.left-col {
+    width: 70%;
+    float: left;
+}
+
+.sidebar {
+    width: 20%;
+    float: right;
+    margin-bottom: 10px;
+	-webkit-transition-property: width;
+	-moz-transition-property: width;
+	transition-property: width;
+	-webkit-transition-duration: 0.5s, 0.5s;
+	-moz-transition-duration: 0.5s, 0.5s;
+	transition-duration: 0.5s, 0.5s;
+	-webkit-transition-timing function: linear, ease-in;
+	-moz-transition-timing function: linear, ease-in;
+	transition-timing function: linear, ease-in;
+}
+
+#featured {
+    padding-top: 9px;
+    text-align:center;
+    max-width:729px;
+    margin: 0px auto;
+}
+#featured .searchBox {
+    width:80%;
+    padding:3px;
+    margin: 0px auto;
+}
+#featured .searchBox .searchInput {
+    overflow: hidden;
+    width: auto;
+}
+#featured .searchBox .searchInput input {
+    width:80%;
+    padding:9px;
+}
+#featured .searchBox .searchInput input:focus {
+    border:3px #FFCC00 solid;
+}
+#featured .searchIn  {
+    padding:3px;
+    margin: 0px auto;
+    width:100%;
+}
+#featured .searchIn  .searchReach {
+    margin: 0px auto;
+    width:auto;
+}
+#featured .searchIn  .searchReach .reach {
+    height:36px;
+    line-height:36px;
+    vertical-align:middle;
+}
+#featured .searchIn  .searchReach .searchb {
+    background-color:#660000;
+    color:#FFFFFF;
+    font-weight:bold;
+    padding:9px;
+    vertical-align:middle;
+}
+
+#latest	{
+    padding: 20px;
+    margin: 0px auto;
+}
+
+#about {
+    padding: 20px;
+}
+
+footer 	{
+    padding: 5px;
+}
+
+.searchHint {
+    font-size:12px;
+}
+.category {
+    float:left;
+    padding:9px;
+}
+.dirPlaceNamed  {
+    color:#F6CB1C;
+    font-weight:bold;
+}
+.howWorksSection  {
+    float:left;
+    width:45%;
+    padding:9px;
+    min-width:189px;
+    border-left:1px #FFFFFF dashed;
+    border-right:1px #FFFFFF dashed;
+}
+.howWorksSection .title {
+    color:#F6CB1C;
+    font-weight:bold;
+}
+.simpleMargin  {
+    margin:9px;
+}
+.simpleMarginTW  {
+    margin-right:9px;
+}

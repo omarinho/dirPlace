@@ -1,0 +1,5 @@
+{% block subject %}[dirPlace - Contact inquiry]{% endblock %}
+
+{% block plain %}
+{{ message }}
+{% endblock %}

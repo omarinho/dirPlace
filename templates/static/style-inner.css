@@ -1,0 +1,367 @@
+body {
+	background: #FFFFFF; color: #000000; font-family: 'Droid Serif', serif; font-size: 16px; line-height:150%;
+	-webkit-transition-property: font-size;
+	-moz-transition-property: font-size;
+	transition-property: font-size;
+	-webkit-transition-duration: 0.5s, 0.5s;
+	-moz-transition-duration: 0.5s, 0.5s;
+	transition-duration: 0.5s, 0.5s;
+	-webkit-transition-timing function: linear, ease-in;
+	-moz-transition-timing function: linear, ease-in;
+	transition-timing function: linear, ease-in;
+}
+
+::-moz-selection {
+    background-color: #91D8f7;
+    color: #fff;
+}
+::selection {
+    background-color: #91D8f7;
+    color: #fff;
+}
+a   {
+    outline: 0;
+    color: #0000FF;
+    text-decoration: underline;
+}
+a:hover {
+    text-decoration: underline;
+}
+p a:hover {
+    color: #0000FF;
+}
+a:active {
+    outline: none;
+    position: relative;
+    top: 2px;
+}
+.clearfix {
+    clear: both;
+}
+
+h1 {
+    font-family: 'Helvetica';
+    font-size: 27px;
+    padding: 0px;
+    -webkit-transition-property: font-size;
+    -moz-transition-property: font-size;
+    transition-property: font-size;
+	-webkit-transition-duration: 0.5s, 0.5s;
+	-moz-transition-duration: 0.5s, 0.5s;
+    transition-duration: 0.5s, 0.5s;
+	-webkit-transition-timing function: linear, ease-in;
+	-moz-transition-timing function: linear, ease-in;
+	transition-timing function: linear, ease-in;
+}
+h2 	{
+    font-family: 'Helvetica'; font-size: 18px; padding: 0px;
+    -webkit-transition-property: font-size;
+    -moz-transition-property: font-size;
+    transition-property: font-size;
+	-webkit-transition-duration: 0.5s, 0.5s;
+	-moz-transition-duration: 0.5s, 0.5s;
+    transition-duration: 0.5s, 0.5s;
+	-webkit-transition-timing function: linear, ease-in;
+	-moz-transition-timing function: linear, ease-in;
+	transition-timing function: linear, ease-in;
+}
+h3 {
+    font-family: 'Droid Serif', serif;
+    font-size: 17px;
+}
+h4 {
+    font-family: 'Droid Serif', serif;
+    padding: 3px;
+    margin: 5px 0 0 0;
+}
+h4 a {
+    text-decoration: underline;
+}
+p {
+    padding: 0 5px 0 5px;
+}
+ul {
+    list-style: none;
+}
+ul li {
+    margin: 0 5px;
+}
+pre	{
+    overflow: scroll;
+    font-size: 10px;
+}
+
+#wrapper {
+    margin: 0px auto;
+    max-width: 980px;
+    width: 90%;
+    background: #FFFFFF;
+    padding: 0px 0;
+    color: #000000;
+    border:9px #000000 solid;
+    -moz-border-radius: 18px;
+	-webkit-border-radius: 18px;
+	border-radius: 18px;
+}
+
+header {
+    padding: 0px;
+    margin:0px;
+}
+header nav {
+    background-color: #000;
+    margin: 0px 0px;
+    padding:0px;
+}
+header nav a {
+    color:#ADD8E6;
+}
+header nav .geo {
+    font-size:12px;
+    float:right;
+    color:#FFFFFF;
+    padding:9px;
+    height:50%;
+    background-color: #000;
+}
+
+#main-content {
+    padding:9px;
+}
+#main-content .results {
+    padding:9px;
+}
+
+#featured {
+    padding-top: 9px;
+    width:100%;
+    margin: 0px auto;
+    background-color:#F1F1F1;
+    padding:3px;
+    float:left;
+    vertical-align:middle;
+}
+#featured .searchBox {
+    width:50%;
+    padding-right:0px;
+    float:left;
+}
+#featured .searchBox .searchInput {
+    overflow: hidden;
+    width: auto;
+}
+#featured .searchBox .searchInput input {
+    width:97%;
+}
+#featured .searchBox .searchInput input:focus {
+    border:3px #FFCC00 solid;
+}
+#featured .searchIn  {
+    float:left;
+    padding-left:0px;
+}
+#featured .searchIn  .searchReach {
+    margin: 0px auto;
+    width:auto;
+}
+#featured .searchIn  .searchReach .reach {
+    vertical-align:middle;
+}
+#featured .searchIn  .searchReach .searchb {
+    background-color:#660000;
+    color:#FFFFFF;
+    font-weight:bold;
+    padding:0px;
+    vertical-align:middle;
+}
+
+footer {
+    padding: 5px;
+}
+footer nav {
+    background-color: #222;
+    padding: 0;
+    margin: 0px 0px;
+}
+footer nav a {
+    color:#ADD8E6;
+    display: block;
+    float: left;
+    padding: 10px;
+}
+footer nav a:hover  {
+    color:#ADD8E6;
+    text-decoration: underline;
+}
+footer nav a:visited {
+    text-decoration:underline;
+}
+footer nav a:active  {
+    position: relative;
+    top: 0;
+    text-decoration:underline;
+}
+
+.searchHint {
+    font-size:12px;
+}
+.category  {
+    float:left;
+    padding:9px;
+}
+.dirPlaceNamed {
+    color:#F6CB1C;
+    font-weight:bold;
+    padding:0px;
+    background-color:black;
+    padding-left:3px;
+    padding-right:3px;
+}
+.simpleMargin  {
+    margin:9px;
+}
+.simpleMarginTW {
+    margin-right:9px;
+}
+.simplePadding  {
+    padding:9px;
+}
+.spot {
+    margin-top:18px;
+    margin-bottom:18px;
+}
+.spot .mainOffer {
+    color:red;
+}
+.spot .moreOffers {
+    font-size:12px;
+    color:darkgreen;
+}
+.spot .content {
+    text-indent:0px;
+}
+
+.banner-spot  {
+    margin-top:18px;
+    margin-bottom:18px;
+}
+.bannerBorder {
+    border:1px #000000 solid;
+}
+.floatLeft {
+    float:left;
+}
+.floatRight {
+    float:right;
+}
+.categoryName {
+    color:#660000;
+}
+.filterBy {
+    font-size:15px;
+}
+.faqBlock {
+    padding-top:9px;
+    padding-bottom:9px;
+}
+.faqBlock .questionBlock {
+    margin:9px;
+}
+.faqBlock .questionBlock h3 {
+    color:#660000;
+    margin-bottom:9px;
+    padding-top:9px;
+}
+.dottedHr{
+    background-color:#fff;
+    border:#000 1px dotted;
+    border-style: none none dotted;
+    color:#fff;
+}
+
+.genericQBlock {
+    width:100%;
+    background-color:#FFF2F2;
+}
+
+.usersQBlock {
+    width:100%;
+    background-color:#ECF8FF;
+}
+
+.businessQBlock {
+    width:100%;
+    background-color:#FFFFEA;
+}
+
+.goUp {
+    font-size:9px;
+    text-decoration:none;
+    color:#000000;
+}
+
+.greenText {
+    color:darkgreen;
+}
+
+.redText {
+    color:#FF0000;
+}
+
+.brownText {
+    color:#660000;
+}
+
+.contactForm {
+    background-color:lightgray;
+    border:1px #000000 dotted;
+}
+
+.errors {
+    background-color:#e8e8e8;
+}
+
+.errorlist li {
+    background-color: #FF0000;
+    color: white;
+    display: block;
+    font-size: 12px;
+    margin: 0 0 3px;
+    padding: 4px 5px;
+    font-weight:normal;
+}
+
+#profileNavigation {
+    width:80%;
+    background-color:black;
+    color:white;
+    padding:9px;
+}
+
+#profileNavigation a {
+    color: #ADD8E6;
+    text-decoration: underline;
+}
+
+#editProfileForm {
+    padding:9px;
+}
+
+#editProfileForm label {
+    width:162px;
+    display: inline-block;
+    padding:9px;
+}
+
+#editProfileForm .helptext {
+    font-size:12px;
+}
+
+.profileDetails {
+    width:243px;
+    border:2px #000000 dotted;
+    -moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+    text-align:left;
+}
